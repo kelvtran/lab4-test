@@ -28,9 +28,9 @@ jobs:
     with:
       node-version: "18"
   - name: Install dependencies
-    run: npm clean-install
+    run: npm clean-install --prefix src
   - name: Run unit tests
-    run: npm run test-unit
+    run: npm run test-unit --prefix src
   - if: success() || failure()
     uses: actions/upload-artifact@v3
     with:
